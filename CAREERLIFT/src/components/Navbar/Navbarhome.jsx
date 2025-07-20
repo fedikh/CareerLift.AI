@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import Logowithouttitle from "/src/assets/images/CLLOGOwithoutslog.png";
 import { FaXmark, FaBars } from "react-icons/fa6";
+
 const Navbarhome = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -24,9 +25,9 @@ const Navbarhome = () => {
 
   const navItems = [
     { link: "Home", path: "home" },
-    { link: "Service", path: "service" },
     { link: "About", path: "about" },
-    { link: "FAQ", path: "faq" },
+    { link: "Services", path: "services" },
+    { link: "FAQ", path: "FAQ" },
   ];
 
   return (
@@ -55,7 +56,7 @@ const Navbarhome = () => {
             <span className="text-[#263238]">CAREERLIFT.AI</span>
           </a>
 
-          {/* Nav items */}
+          {/* Nav items for desktop */}
           <ul
             className="md:flex items-center justify-center space-x-6 hidden 
              bg-[#00008B]/10 backdrop-blur-md px-6 py-3 
@@ -77,6 +78,7 @@ const Navbarhome = () => {
             ))}
           </ul>
 
+          {/* Desktop Login / Sign Up */}
           <div className="space-x-6 hidden lg:flex items-center">
             <a
               href="/"
@@ -98,7 +100,7 @@ const Navbarhome = () => {
             </button>
           </div>
 
-          {/* menu btn for only mobile devices */}
+          {/* Mobile menu toggle button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -112,7 +114,8 @@ const Navbarhome = () => {
             </button>
           </div>
         </div>
-        {/*  nav items for mobile devices */}
+
+        {/* Nav items for mobile (with Login / Sign Up) */}
         <div
           className={`space-y-4 px-4 mt-16 py-7 bg-[#004080] ${
             isMenuOpen ? "block fixed top-0 right-0 left-0" : "hidden"
@@ -125,11 +128,30 @@ const Navbarhome = () => {
               smooth={true}
               offset={-100}
               key={path}
-              className="block text-base text-white hover:text-[#18191F] first: font-medium cursor-pointer"
+              className="block text-base text-white hover:text-[#18191F] font-medium cursor-pointer"
             >
               {link}
             </Link>
           ))}
+
+          {/* Login & Sign Up buttons for mobile */}
+          <div className="flex flex-col space-y-4 pt-4">
+            <a
+              href="/"
+              className="text-lg font-semibold px-6 py-3 rounded-full 
+               border-2 border-white text-white text-center
+               transition-all duration-300 hover:bg-white hover:text-[#004080]"
+            >
+              Login
+            </a>
+            <button
+              className="text-lg font-semibold px-6 py-3 rounded-full 
+               bg-white text-[#004080] border-2 border-white
+               transition-all duration-300 hover:bg-[#4D4D4D] hover:text-white"
+            >
+              Sign Up
+            </button>
+          </div>
         </div>
       </nav>
     </header>
