@@ -106,12 +106,7 @@ function Login({ onLogin }) {
           Sign up
         </a>
       </p>
-      <button
-        onClick={() => navigate("/")}
-        className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        back Home
-      </button>
+
       <div className="mt-4 text-center">
         <Link to="/" className="text-blue-600 hover:text-blue-800 font-medium">
           ← Back to Home
